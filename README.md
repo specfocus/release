@@ -1,0 +1,2 @@
+# specfocus
+@specfocus public packages
