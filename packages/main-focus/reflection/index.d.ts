@@ -1,0 +1,55 @@
+import { Reference } from 'reference';
+export declare type AbsoluteUrl = string;
+export declare type Base64 = string;
+export declare type Base64Url = string;
+export declare type Code = string;
+export declare type EmailAddress = string;
+export declare type Guid = string;
+export declare type LowerCase = string;
+export declare type Json = Code;
+export declare type NumberLike = string;
+export declare type PhoneNumber = string;
+export declare type UpperCase = string;
+export declare const BOOLEAN = "boolean";
+export declare const DATE = "date";
+export declare const DATE_TIME = "datetime";
+export declare const DECIMAL = "decimal";
+export declare const DOUBLE = "double";
+export declare const INTEGER = "integer";
+export declare const NUMBER = "number";
+export declare const STRING = "string";
+export declare const TIMESTAMP = "timestamp";
+export declare const DOMAIN = "domain";
+export declare const FIELDSET = "fieldset";
+export declare const DATE_STR = "date";
+export declare const EMAIL = "email";
+export declare const GUID = "guid";
+export declare const NAME = "name";
+export declare const PASSWORD = "password";
+export declare const REGEX = "regex";
+export declare const URL = "url";
+export declare const USERNAME = "username";
+export declare const DATE_TYPES: readonly ["date", "datetime"];
+export declare const FLOAT_TYPES: readonly ["decimal", "double", "number"];
+export declare const INTEGER_TYPES: readonly ["integer", "timestamp"];
+export declare const NUMBER_TYPES: readonly ["integer", "timestamp", "decimal", "double", "number"];
+export declare const STRING_TYPES: readonly ["date", "email", "guid", "name", "password", "regex", "string", "url", "username"];
+export declare type BooleanType = typeof BOOLEAN;
+export declare type DateType = typeof DATE_TYPES[number];
+export declare type FloatType = typeof FLOAT_TYPES[number];
+export declare type IntegerType = typeof INTEGER_TYPES[number];
+export declare type NumberType = typeof NUMBER_TYPES[number];
+export declare type StringType = typeof STRING_TYPES[number];
+export declare type PrimitiveType<T> = T extends Boolean ? BooleanType : T extends Date ? DateType : T extends BigInt ? IntegerType : T extends number ? NumberType : T extends string ? StringType : never;
+export declare type Primitive = BigInt | boolean | Date | number | string;
+export interface Domain<T extends Primitive> {
+    default?: T;
+    name: string;
+    type: PrimitiveType<T>;
+    member: typeof DOMAIN;
+}
+export interface Fieldset {
+    name: string;
+    fields: Record<string, Reference<Domain<Primitive>, 'name'>>;
+    member: typeof FIELDSET;
+}
