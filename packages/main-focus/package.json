@@ -1,0 +1,13 @@
+{
+  "name": "@specfocus/main-focus",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:specfocus/release.git"
+  },
+  "author": "Lucas M. Oromi",
+  "license": "MIT"
+}
