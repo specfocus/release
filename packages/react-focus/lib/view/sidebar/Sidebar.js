@@ -41,9 +41,12 @@ const Sidebar = (_a) => {
         setSidebar(Object.assign(Object.assign({}, sidebar), { drawerOpen: !drawerOpen }));
     };
     const chevronRight = theme.direction === 'rtl' ? drawerOpen : !drawerOpen;
-    return ((0, jsx_runtime_1.jsxs)(Box_1.default, Object.assign({ sx: { display: 'flex', flexDirection: 'row', height: '100vh', width: '100vw' } }, stack, { children: [(0, jsx_runtime_1.jsxs)(style_1.Drawer, Object.assign({ PaperProps: { sx: { position: 'sticky' } }, sx: { flexGrow: 0, width: drawerOpen ? sidebar.drawerWidth : undefined }, variant: "permanent", open: drawerOpen }, { children: [(0, jsx_runtime_1.jsxs)(style_1.DrawerHeader, { children: [drawerOpen && banner, (0, jsx_runtime_1.jsx)(IconButton_1.default, Object.assign({ onClick: handleDrawerShrink }, { children: chevronRight ? (0, jsx_runtime_1.jsx)(ChevronRight_1.default, {}, void 0) : (0, jsx_runtime_1.jsx)(ChevronLeft_1.default, {}, void 0) }), void 0)] }, void 0), sidebar && Array.isArray(sidebar.lists) && sidebar.lists.map((list, listIndex) => ((0, jsx_runtime_1.jsxs)(react_2.Fragment, { children: [drawerOpen && ((0, jsx_runtime_1.jsx)(Divider_1.default, {}, `divider-${listIndex}`)), (0, jsx_runtime_1.jsxs)(List_1.default, { children: [drawerOpen && list.subheader && hasRights(list.allow) && ((0, jsx_runtime_1.jsx)(style_1.Subheader, Object.assign({ inset: true }, { children: (0, jsx_runtime_1.jsx)(TranslatedTypography_1.default, Object.assign({ variant: "overline" }, { children: list.subheader }), void 0) }), `list-${listIndex}-subheader`)), list && Array.isArray(list.items) && list.items.map((item, itemIndex) => {
+    return ((0, jsx_runtime_1.jsxs)(Box_1.default, Object.assign({ sx: { display: 'flex', flexDirection: 'row', height: '100vh', width: '100vw' } }, stack, { children: [(0, jsx_runtime_1.jsxs)(style_1.Drawer, Object.assign({ PaperProps: { sx: { position: 'sticky' } }, sx: { flexGrow: 0, width: drawerOpen ? sidebar.drawerWidth : undefined }, variant: "permanent", open: drawerOpen }, { children: [(0, jsx_runtime_1.jsxs)(style_1.DrawerHeader, { children: [drawerOpen && banner, (0, jsx_runtime_1.jsx)(IconButton_1.default, Object.assign({ onClick: handleDrawerShrink }, { children: chevronRight ? (0, jsx_runtime_1.jsx)(ChevronRight_1.default, {}, void 0) : (0, jsx_runtime_1.jsx)(ChevronLeft_1.default, {}, void 0) }), void 0)] }, void 0), sidebar && Array.isArray(sidebar.lists) && sidebar.lists.map((list, listIndex) => ((0, jsx_runtime_1.jsxs)(react_2.Fragment, { children: [drawerOpen && ((0, jsx_runtime_1.jsx)(Divider_1.default, {}, `divider-${listIndex}`)), hasRights(list.allow) && ((0, jsx_runtime_1.jsxs)(List_1.default, { children: [drawerOpen && list.subheader && ((0, jsx_runtime_1.jsx)(style_1.Subheader, Object.assign({ inset: true }, { children: (0, jsx_runtime_1.jsx)(TranslatedTypography_1.default, Object.assign({ variant: "overline" }, { children: list.subheader }), void 0) }), `list-${listIndex}-subheader`)), list && Array.isArray(list.items) && list.items.map((item, itemIndex) => {
                                         const key = `list-${listIndex}-item-${itemIndex}`;
-                                        const { type } = item, props = __rest(item, ["type"]);
+                                        const { allow, type } = item, props = __rest(item, ["allow", "type"]);
+                                        if (allow && !hasRights(allow)) {
+                                            return null;
+                                        }
                                         switch (type) {
                                             case 'link':
                                                 const match = (0, react_router_dom_1.matchPath)({ path: props.to, end: true, caseSensitive: false }, location.pathname);
@@ -54,6 +57,6 @@ const Sidebar = (_a) => {
                                             default:
                                                 return ((0, react_1.createElement)(style_1.Item, Object.assign({}, props, { key: key })));
                                         }
-                                    })] }, `list-${listIndex}`)] }, `listroot-${listIndex}`)))] }), void 0), children] }), void 0));
+                                    })] }, `list-${listIndex}`))] }, `listroot-${listIndex}`)))] }), void 0), children] }), void 0));
 };
 exports.default = Sidebar;
