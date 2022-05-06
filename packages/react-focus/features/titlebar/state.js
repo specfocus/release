@@ -9,7 +9,7 @@ const react_1 = __importDefault(require("react"));
 exports.atomTitlebar = (0, recoil_1.atom)({
     key: 'atomTitlebar',
     default: {
-        title: 'GraphQL Editor graphqleditor.com',
+        title: '',
         tools: []
     }
 });

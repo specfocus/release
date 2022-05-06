@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useSetRoles = exports.useHasRights = exports.onlyRoles = exports.useSetAccount = exports.useAccountValue = exports.useAccount = exports.atomAccount = void 0;
+const react_1 = require("react");
 const recoil_1 = require("recoil");
 const ANONYMOUS = 'anonymous';
 const ANONYMOUS_ACCOUNT = {
@@ -32,13 +33,17 @@ exports.onlyRoles = (0, recoil_1.selector)({
     }
 });
 const useHasRights = () => {
-    const arr = (0, recoil_1.useRecoilValue)(exports.onlyRoles);
-    const roles = new Set(arr);
-    return (rights) => typeof rights === 'string'
-        ? roles.has(rights)
-        : Array.isArray(rights)
-            ? rights.map(roles.has).some(has => has)
-            : true;
+    const value = (0, recoil_1.useRecoilValue)(exports.onlyRoles);
+    const hasRights = (0, react_1.useCallback)((rights) => {
+        const allowed = new Set(value);
+        console.log('Rights', rights, 'in', value);
+        return (typeof rights === 'string'
+            ? rights === '*' || allowed.has(rights)
+            : Array.isArray(rights)
+                ? rights.map(r => allowed.has(r)).some(r => r)
+                : true);
+    }, [value]);
+    return hasRights;
 };
 exports.useHasRights = useHasRights;
 const useSetRoles = () => (0, recoil_1.useSetRecoilState)(exports.onlyRoles);

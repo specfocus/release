@@ -1,6 +1,6 @@
 {
   "name": "@specfocus/react-focus",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "repository": {
     "type": "git",
     "url": "git@github.com/specfocus/release.git"
@@ -39,7 +39,7 @@
     "@mui/material": "5.x",
     "@mui/styles": "5.x",
     "date-fns": "2.x",
-    "react": "17.x",
+    "react": ">= 17.x",
     "react-router": "6.x",
     "react-router-dom": "6.x",
     "recoil": "0.5.x"

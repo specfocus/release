@@ -78,7 +78,6 @@ exports.useStyles = (0, styles_1.makeStyles)((theme) => ({
 }));
 const Empty = () => (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {}, void 0);
 const PaneDrawer = () => {
-    console.log('PaneDrawer');
     const { actions, contentComponent, icon: Icon, maxWidth, reducer, stripComponent, title, } = (0, recoil_1.useRecoilValue)(AppState_1.atomPane);
     const Content = contentComponent || Empty;
     const Strip = stripComponent || Empty;

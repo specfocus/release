@@ -20,4 +20,4 @@ export declare const Subheader: import("@emotion/styled-base").StyledComponent<{
     sx?: import("@mui/material/styles").SxProps<Theme>;
 } & import("@mui/material/OverridableComponent").CommonProps & Omit<Pick<import("react").DetailedHTMLProps<import("react").LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, "key" | keyof import("react").LiHTMLAttributes<HTMLLIElement>> & {
     ref?: import("react").Ref<HTMLLIElement>;
-}, "color" | "inset" | "sx" | keyof import("@mui/material/OverridableComponent").CommonProps | "children" | "disableGutters" | "disableSticky"> & import("@mui/system").MUIStyledCommonProps<Theme>, {}, {}>;
+}, "children" | keyof import("@mui/material/OverridableComponent").CommonProps | "color" | "sx" | "inset" | "disableGutters" | "disableSticky"> & import("@mui/system").MUIStyledCommonProps<Theme>, {}, {}>;
