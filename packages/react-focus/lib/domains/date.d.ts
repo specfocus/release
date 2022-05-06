@@ -1,0 +1,12 @@
+import { DateDomain } from '../DateDomain';
+export declare const DATE_ISO: DateDomain;
+export declare const DATE_FORWARD: DateDomain;
+export declare const DATE_BACKWARD: DateDomain;
+export declare const DATE_FRIDAY: DateDomain;
+export declare const DATE_MONDAY: DateDomain;
+export declare const DATE_SATURDAY: DateDomain;
+export declare const DATE_SUNDAY: DateDomain;
+export declare const DATE_TUESDAY: DateDomain;
+export declare const DATE_WEDNESDAY: DateDomain;
+export declare const DATE_WEEKDAY: DateDomain;
+export declare const DATE_WEEKEND: DateDomain;

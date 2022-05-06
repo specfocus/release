@@ -1,0 +1,10 @@
+import React from 'react';
+export declare type AsideRecord = Record<string, React.ReactElement>;
+export declare const atomAsideActive: import("recoil").RecoilState<string>;
+export declare const selectorAsideActive: (param: string) => import("recoil").RecoilState<boolean>;
+export declare const useAsideActive: (key: string) => [boolean, import("recoil").SetterOrUpdater<boolean>];
+export declare const atomAsideRecord: import("recoil").RecoilState<AsideRecord>;
+export declare const selectorAsideEntry: (param: string) => import("recoil").RecoilState<React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+declare type AsideTuple = [string, React.ReactElement];
+export declare const useAside: ([key, element]: AsideTuple) => void;
+export {};

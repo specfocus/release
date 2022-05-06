@@ -1,0 +1,11 @@
+import { MaybePromise } from '@specfocus/spec-focus/maybe';
+import type { Domain } from './Domain';
+export declare type DomainStore = Record<string, MaybePromise<Domain>>;
+export declare const atomDomainStore: import("recoil").RecoilState<DomainStore>;
+export declare const selectorDomain: (param: string) => import("recoil").RecoilState<Domain>;
+export declare const selectorDomains: (param: string[]) => import("recoil").RecoilValueReadOnly<Record<string, Domain>>;
+export declare const useDomainFetch: () => (key: string) => Promise<Domain>;
+export declare const useDomain: <T = any>(key: string, timespan?: number) => Domain;
+export declare const isPromise: <T>(val: unknown) => val is Promise<T>;
+export declare const useDomain2: (key: string) => Domain;
+export declare const useDomains: (keys: string[]) => Record<string, Domain>;

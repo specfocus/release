@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Resource = exports.RoutesWithLayout = exports.createAdminStore = exports.BaseAppUI = exports.BaseAppRouter = exports.BaseAppContext = exports.CoreAdmin = void 0;
+const BaseApp_1 = __importDefault(require("./BaseApp"));
+exports.CoreAdmin = BaseApp_1.default;
+const BaseAppContext_1 = __importDefault(require("./BaseAppContext"));
+exports.BaseAppContext = BaseAppContext_1.default;
+const BaseAppRouter_1 = __importDefault(require("./BaseAppRouter"));
+exports.BaseAppRouter = BaseAppRouter_1.default;
+const BaseAppUI_1 = __importDefault(require("./BaseAppUI"));
+exports.BaseAppUI = BaseAppUI_1.default;
+const createReduxStore_1 = __importDefault(require("./createReduxStore"));
+exports.createAdminStore = createReduxStore_1.default;
+const RoutesWithLayout_1 = __importDefault(require("./RoutesWithLayout"));
+exports.RoutesWithLayout = RoutesWithLayout_1.default;
+const Resource_1 = __importDefault(require("./Resource"));
+exports.Resource = Resource_1.default;

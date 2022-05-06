@@ -1,0 +1,40 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const categories_1 = __importDefault(require("./categories"));
+const commands_1 = __importDefault(require("./commands"));
+const companies_1 = require("./companies");
+const contactNotes_1 = require("./contactNotes");
+const contacts_1 = require("./contacts");
+const customers_1 = __importDefault(require("./customers"));
+const dealNotes_1 = require("./dealNotes");
+const deals_1 = require("./deals");
+const finalize_1 = __importDefault(require("./finalize"));
+const invoices_1 = __importDefault(require("./invoices"));
+const products_1 = __importDefault(require("./products"));
+const reviews_1 = __importDefault(require("./reviews"));
+const sales_1 = require("./sales");
+const tags_1 = require("./tags");
+const tasks_1 = require("./tasks");
+exports.default = (options = { serializeDate: true }) => {
+    const db = {};
+    db.categories = (0, categories_1.default)();
+    db.companies = (0, companies_1.generateCompanies)(db);
+    db.contacts = (0, contacts_1.generateContacts)(db);
+    db.contactNotes = (0, contactNotes_1.generateContactNotes)(db);
+    // @ts-ignore
+    db.customers = (0, customers_1.default)(db, options);
+    db.deals = (0, deals_1.generateDeals)(db);
+    db.dealNotes = (0, dealNotes_1.generateDealNotes)(db);
+    db.products = (0, products_1.default)(db);
+    db.commands = (0, commands_1.default)(db, options);
+    db.invoices = (0, invoices_1.default)(db);
+    db.reviews = (0, reviews_1.default)(db, options);
+    db.sales = (0, sales_1.generateSales)(db);
+    db.tags = (0, tags_1.generateTags)(db);
+    db.tasks = (0, tasks_1.generateTasks)(db);
+    (0, finalize_1.default)(db);
+    return db;
+};

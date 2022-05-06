@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fetchCancel = exports.FETCH_CANCEL = exports.fetchError = exports.FETCH_ERROR = exports.fetchEnd = exports.FETCH_END = exports.fetchStart = exports.FETCH_START = void 0;
+exports.FETCH_START = 'FETCH_START';
+const fetchStart = () => ({ type: exports.FETCH_START });
+exports.fetchStart = fetchStart;
+exports.FETCH_END = 'FETCH_END';
+const fetchEnd = () => ({ type: exports.FETCH_END });
+exports.fetchEnd = fetchEnd;
+exports.FETCH_ERROR = 'FETCH_ERROR';
+const fetchError = () => ({ type: exports.FETCH_ERROR });
+exports.fetchError = fetchError;
+exports.FETCH_CANCEL = 'FETCH_CANCEL';
+const fetchCancel = () => ({ type: exports.FETCH_CANCEL });
+exports.fetchCancel = fetchCancel;
