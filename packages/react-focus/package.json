@@ -39,7 +39,7 @@
     "@mui/material": "5.x",
     "@mui/styles": "5.x",
     "date-fns": "2.x",
-    "react": ">= 17.x",
+    "react": ">= 18.x",
     "react-router": "6.x",
     "react-router-dom": "6.x",
     "recoil": "0.5.x"
